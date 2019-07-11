@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This</title>
+</head>
+<body>
+    <button id="btn">Clique</button>
+
+    <script>
+    const btn = document.getElementById('btn');
+    // btn.addEventListener('click', function(){ // Recebo o próprio objeto
+    //     console.log(this)
+    // })
+
+    btn.addEventListener('click', () =>{ // Recebe o contexto (escopo) e não apenas o objeto, neste caso, recebe window
+        console.log(this)
+    })
+
+    </script>
+    
+</body>
+</html>

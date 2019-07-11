@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This Arrow Function 2</title>
+</head>
+<body>
+
+    <button id="btn">Fazer pão</button>
+
+    <script>
+        const lanche = {
+            pao: "branco",
+            queijo: "cheddar",
+            preparar: function(){
+                return `Eu quero um lanche com pão ${this.pao} e queijo ${this.queijo}`
+            },
+            // fazer: function(){ 
+            //     var that = this; // com a key function(){} é preciso fazer  a gambiarra do that = this
+            //     window.setTimeout(function(){// contexto léxico de window
+            //         console.log(that.preparar());
+            //     },500)
+            // }
+            fazer: function(){
+                window.setTimeout(()=>{ // contexto lexico de lanche
+                    console.log(this.preparar())
+                },500)
+            }
+        }
+
+        const btn = document.getElementById('btn')
+
+        btn.addEventListener('click', function(){lanche.fazer()})
+    </script>
+    
+</body>
+</html>
