@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>Ronaldo</li>
+        <li>Roberto Carlos</li>
+        <li>Ronaldinho Gaucho</li>
+    </ul>
+
+    <script>
+        let list = document.querySelectorAll('#lista li') // retorna uma NodeList,  logo não tem os métodos de Array
+        let arrayList = Array.from(list) // retorna um Array, com todos os métodos
+
+        console.log(list)
+        console.log(arrayList)
+
+        let nomes = arrayList.map((nome) => nome.textContent)
+
+        console.log(nomes)
+    </script>
+</body>
+</html>
